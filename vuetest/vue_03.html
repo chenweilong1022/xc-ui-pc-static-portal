@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用v-text解决闪烁问题</title>
+
+</head>
+<body>
+
+<div id="app">
+    <span v-text="name"></span>
+    <input v-model="number1"> +
+    <input v-model="number2"> =
+    <span v-text="Number.parseInt(number1) + Number.parseInt(number2)"></span>
+    <button>计算</button>
+
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            name:'黑马程序员',
+            number1: 1,
+            number2: 2
+        }
+    })
+</script>
+</html>
